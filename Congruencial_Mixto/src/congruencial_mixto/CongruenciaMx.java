@@ -1,7 +1,10 @@
 
 package congruencial_mixto;
 
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -11,7 +14,10 @@ import java.util.Scanner;
 public class CongruenciaMx {
 
     public static void main(String[] arg) {
-
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss yyyy/MM/dd");
+	Date date = new Date();
+	System.out.println("Hora y Fecha: " + dateFormat.format(date) + "\n");
+        
         Scanner entrada = new Scanner(System.in);
         double const_Mult_a, const_Adit_c;
         double Xn1;
@@ -19,7 +25,6 @@ public class CongruenciaMx {
         double result;
 
         DecimalFormat formtDec = new DecimalFormat("0.00");
-        DecimalFormat formtDec2 = new DecimalFormat("0.000");
 
         System.out.println("GENERADOR CONGRUENCIAL MIXTO");
         
@@ -37,14 +42,14 @@ public class CongruenciaMx {
         System.out.println("\n");
         
 
-        System.out.println("| N | " + "  Xn  |" + " (AXn+c)m   |" + "  Xn+1 |" + " Resultado # ");
+        System.out.println("| N | " + "  Xn  |" + " (AXn+c)m  |" + "  Xn+1 |" + " Resultado # ");
 
-        for (i = 0; i < 8; i++) {
+        for (i = 0; i < mod; i++) {
             Xn1 = ((const_Mult_a * semilla) + const_Adit_c) / mod;
             Xn = (int) ((const_Mult_a * semilla) + const_Adit_c) % mod;
             result = (double)(Xn / (double)mod);
             System.out.println(" ------------------------------------------ ");
-            System.out.println("| " +  i + " |   " + (int) semilla + "   |    " + formtDec2.format(Xn1) + "   |   " + (int) (Xn) + "   |   " + result);
+            System.out.println("| " +  i + " |   " + (int) semilla + "   |    " + formtDec.format(Xn1) + "   |   " + (int) (Xn) + "   |   " + result);
             semilla = Xn;
 
         }
