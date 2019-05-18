@@ -1,4 +1,5 @@
-# Congruencial Mixto
+# Generador congruencial mixto: Números aleatorios
+
 El metodo congruencial mixto: es el más utilizado en simulación en computadoras digitales y 
 esta basado en una relación de recurrencia que ademas utiliza el operador MOD.
 El objetivo es generar un valor aleatorio a partir de otro anterior.
